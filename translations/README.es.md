@@ -26,13 +26,3 @@ Trabajo en software desde 2017. Mi experiencia anterior en contabilidad y finanz
 Para iniciar una conversación profesional, cuéntame qué necesita cambiar, qué lo está dificultando y qué debe seguir funcionando.
 
 [Contacto profesional](mailto:contact@johndgomez.com) · [Conversaciones laborales](mailto:career@johndgomez.com)
-
-<details>
-<summary>Términos y notación</summary>
-
-**Tech Lead** es un rol de liderazgo técnico. **C#**, pronunciado «C sharp», es un lenguaje de programación; el numeral forma parte de su nombre. **.NET** es una plataforma de desarrollo de software; el punto inicial forma parte del nombre. **ERP** significa planificación de recursos empresariales. **SaaS** significa software como servicio. **Multi-tenant** describe una plataforma compartida con datos y accesos separados para las organizaciones que la utilizan. Un **fallo parcial** ocurre cuando una parte del sistema falla y otras siguen operando. **Continuidad operativa** se refiere a mantener las actividades necesarias del negocio o recuperarlas tras una interrupción. **D.** pertenece al nombre público; **·** separa elementos relacionados; **@** separa el buzón del dominio en un correo.
-
-</details>
-<!--
-Notación del archivo: Markdown usa # al inicio para títulos, varios # para sus niveles, ** a ambos lados para énfasis, - al inicio para elementos de lista y [texto](destino) para enlaces. Las comillas invertidas delimitan nombres literales. https:// inicia una dirección web; mailto: inicia un enlace de correo. La barra separa segmentos de ruta; ../ indica la carpeta superior; .md identifica Markdown; .es identifica español. HTML usa signos menor y mayor para etiquetas, una barra para cerrarlas, el signo igual para asignar atributos y comillas para delimitar sus valores. h1 es el título principal; picture agrupa variantes de imagen; source proporciona una variante; media selecciona la preferencia de tema oscuro; srcset y src identifican imágenes; img muestra la imagen; alt aporta su alternativa textual; width establece el ancho en píxeles. details crea un apartado desplegable y summary nombra su control. Este comentario terminal explica la sintaxis sin incorporar instrucciones administrativas al perfil visible.
--->
