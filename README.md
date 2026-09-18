@@ -26,13 +26,3 @@ I have worked in software since 2017. Earlier experience in accounting and opera
 For a professional conversation, tell me what needs to change, what is getting in the way and what must keep working.
 
 [Professional inquiries](mailto:contact@johndgomez.com) · [Career conversations](mailto:career@johndgomez.com)
-
-<details>
-<summary>Terms and notation</summary>
-
-**Tech Lead** is a technical leadership role. **C#**, pronounced “C sharp”, is a programming language; the hash is part of its name. **.NET** is a software development platform; the initial dot is part of its name. **ERP** means enterprise resource planning. **SaaS** means software as a service. **Multi-tenant** describes a shared platform with separate data and access for its tenant organizations. A **trade-off** is a choice between competing benefits and costs. **Partial failure** means that one part of a system fails while others continue operating. **Operational continuity** concerns keeping necessary business activities running or recovering them after disruption. **D.** belongs to the public name; **·** separates related items; **@** separates the mailbox from the domain in an email address.
-
-</details>
-<!--
-Source notation: Markdown uses a leading # for a heading, repeated # characters for subheadings, paired ** for emphasis, a leading - for a list item and [label](destination) for a link. Backticks enclose literal names. https:// introduces a web address; mailto: introduces an email link. A slash separates path components; ../ refers to the parent directory; .md names a Markdown file; .es identifies Spanish. HTML uses angle brackets for tags, a slash for closing elements, equals to assign attributes and quotes to enclose attribute values. h1 is the main heading; picture groups alternative images; source provides a conditional source; media selects the dark color-scheme preference; srcset and src identify image files; img displays an image; alt supplies its text alternative; width sets the display width in pixels. details creates a collapsible section and summary labels its control. The terminal HTML comment explains the source syntax without adding administrative copy to the rendered profile.
--->
