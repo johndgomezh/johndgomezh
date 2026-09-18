@@ -1,39 +1,38 @@
-<picture>
+<h1><picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark/on-dark.svg">
   <img src="assets/wordmark/on-light.svg" alt="John D. Gómez" width="520">
-</picture>
+</picture></h1>
 
-[English](translations/README.en.md)
+[Español](translations/README.es.md)
 
-## Tech Lead · Diseño de software empresarial
+**Tech Lead · Software design · Business-critical enterprise systems**
 
-Trabajo en software desde 2017. Mi experiencia combina liderazgo técnico, desarrollo con C# y .NET e integración de sistemas empresariales.
+I work on the design and evolution of enterprise software, combining technical leadership with hands-on development in C# and .NET. My experience spans enterprise integrations, ERP and e-commerce workflows, and multi-tenant SaaS platforms.
 
-He trabajado con sistemas ERP, comercio electrónico y plataformas SaaS multi-tenant. Mi foco está en cómo diseñar, entregar y evolucionar software sin perder de vista la operación que depende de él.
+I have worked in software since 2017. Earlier experience in accounting and operational finance informs how I approach information integrity, controls and the operational consequences of a change.
 
-### Experiencia y enfoque
+## Areas of work
 
-- **Diseño y desarrollo:** aplicaciones empresariales con C# y .NET, delimitación de responsabilidades y dependencias entre componentes.
-- **Integraciones:** conexión de aplicaciones y procesos de negocio, contratos de información y recuperación ante fallos.
-- **Evolución de sistemas:** cambios graduales, mantenibilidad y continuidad operativa.
+- **Technical design:** component responsibilities, dependencies and implementation trade-offs.
+- **Enterprise integration:** information contracts, business workflows and recovery from partial failures.
+- **System evolution:** incremental modernization, maintainability and operational continuity.
 
-Mi experiencia previa en contabilidad y finanzas operativas aporta una perspectiva adicional sobre controles, integridad de la información y consecuencias de un cambio.
+## Background and writing
 
-### Conversemos
+[Website and technical writing](https://johndgomez.com/) · [GitHub organization](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/)
 
-[Trayectoria, trabajo e ideas](https://johndgomez.com/) · [Organización en GitHub](https://github.com/johndgomez)
+## Contact
 
-**Contacto profesional:** [contact@johndgomez.com](mailto:contact@johndgomez.com)  
-**Conversaciones laborales:** [career@johndgomez.com](mailto:career@johndgomez.com)
+For a professional conversation, tell me what needs to change, what is getting in the way and what must keep working.
+
+[Professional inquiries](mailto:contact@johndgomez.com) · [Career conversations](mailto:career@johndgomez.com)
 
 <details>
-<summary>Términos y notación</summary>
+<summary>Terms and notation</summary>
 
-**Tech Lead** es un rol de liderazgo técnico: orienta decisiones de ingeniería y acompaña su ejecución. **C#**, pronunciado «C sharp», es un lenguaje de programación; el signo **#** forma parte de su nombre. **.NET** es una plataforma para desarrollar y ejecutar aplicaciones; el punto inicial forma parte del nombre. **ERP** significa planificación de recursos empresariales y aquí designa sistemas que integran procesos de una empresa. **SaaS** significa software como servicio. **Multi-tenant** describe una plataforma compartida por varias organizaciones, con separación de sus datos y configuración. **GitHub** es la plataforma donde se aloja este perfil y se colabora sobre repositorios de software. Un **repositorio** conserva archivos y su historial de cambios. El punto medio **·** separa elementos relacionados. En una dirección de correo, **@** separa el buzón del dominio.
-
-
-**Lectura del archivo.** Este documento usa **Markdown**, un formato de texto: `##` y `###` introducen títulos de distinto nivel; `**texto**` destaca texto; un guion al inicio introduce un elemento de lista. `[texto](destino)` crea un enlace; `https://` inicia una dirección web y `mailto:` prepara un mensaje de correo. Las comillas invertidas delimitan nombres o instrucciones literales. Dos espacios al final de una línea fuerzan un salto de línea.
-
-**Imágenes y rutas.** Las etiquetas HTML se delimitan con `<` y `>`; una barra antes del nombre cierra el elemento. `picture` agrupa variantes de imagen; `source` selecciona una variante; `media="(prefers-color-scheme: dark)"` activa la variante cuando el dispositivo solicita un tema oscuro; `srcset` y `src` indican el archivo de imagen; `img` lo muestra; `alt` aporta un nombre accesible y `width="520"` establece un ancho de referencia de 520 píxeles. El signo `=` asigna un valor a un atributo y las comillas lo delimitan. `details` crea este apartado desplegable y `summary` es su control de apertura. En las rutas, `/` separa carpetas y `..` significa subir a la carpeta superior. `assets/wordmark` guarda el nombre gráfico; `on-dark.svg` y `on-light.svg` son sus variantes para fondos oscuros y claros. SVG es un formato de imagen vectorial; `.md` identifica Markdown; `README` nombra el archivo de presentación; `.en` indica inglés y `translations` contiene la traducción. La inicial **D.** forma parte del nombre público John D. Gómez.
+**Tech Lead** is a technical leadership role. **C#**, pronounced “C sharp”, is a programming language; the hash is part of its name. **.NET** is a software development platform; the initial dot is part of its name. **ERP** means enterprise resource planning. **SaaS** means software as a service. **Multi-tenant** describes a shared platform with separate data and access for its tenant organizations. A **trade-off** is a choice between competing benefits and costs. **Partial failure** means that one part of a system fails while others continue operating. **Operational continuity** concerns keeping necessary business activities running or recovering them after disruption. **D.** belongs to the public name; **·** separates related items; **@** separates the mailbox from the domain in an email address.
 
 </details>
+<!--
+Source notation: Markdown uses a leading # for a heading, repeated # characters for subheadings, paired ** for emphasis, a leading - for a list item and [label](destination) for a link. Backticks enclose literal names. https:// introduces a web address; mailto: introduces an email link. A slash separates path components; ../ refers to the parent directory; .md names a Markdown file; .es identifies Spanish. HTML uses angle brackets for tags, a slash for closing elements, equals to assign attributes and quotes to enclose attribute values. h1 is the main heading; picture groups alternative images; source provides a conditional source; media selects the dark color-scheme preference; srcset and src identify image files; img displays an image; alt supplies its text alternative; width sets the display width in pixels. details creates a collapsible section and summary labels its control. The terminal HTML comment explains the source syntax without adding administrative copy to the rendered profile.
+-->
