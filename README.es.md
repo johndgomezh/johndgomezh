@@ -1,7 +1,5 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://assets.johndgomez.com/current/identity/wordmark/negative/vector/wordmark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://assets.johndgomez.com/current/identity/wordmark/positive/vector/wordmark.svg">
-  <img alt="John D. Gómez" src="https://assets.johndgomez.com/current/identity/wordmark/positive/vector/wordmark.svg" width="560">
+  <img alt="John D. Gómez — Tech Lead, diseño y evolución de software empresarial" src="https://assets.johndgomez.com/current/profiles/github/personal/png/banner.png" width="1280">
 </picture>
 
 [English](README.md)
