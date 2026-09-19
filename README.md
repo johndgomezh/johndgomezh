@@ -1,10 +1,14 @@
-# John D. Gómez
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://assets.johndgomez.com/current/identity/wordmark/negative/vector/wordmark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://assets.johndgomez.com/current/identity/wordmark/positive/vector/wordmark.svg">
+  <img alt="John D. Gómez" src="https://assets.johndgomez.com/current/identity/wordmark/positive/vector/wordmark.svg" width="560">
+</picture>
 
 [Español](README.es.md)
 
-**Tech Lead · Software design · Enterprise systems**
+**Tech Lead | Enterprise Software Design & Modernization | C# and .NET | Integrations | Multi-tenant SaaS**
 
-I work on enterprise software that needs to evolve while keeping business operations running. My experience combines technical leadership with hands-on development in C# and .NET, systems integration, ERP and e-commerce workflows, and multi-tenant SaaS platforms.
+I work on enterprise software that needs to evolve while keeping business operations running. My experience combines technical leadership with hands-on development in C# and .NET, systems integration, enterprise workflows and multi-tenant SaaS platforms.
 
 I have worked in software since 2017. Earlier experience in accounting and operational finance informs how I approach information integrity, controls and the operational consequences of a change.
 
@@ -18,7 +22,7 @@ I have worked in software since 2017. Earlier experience in accounting and opera
 
 ## Background and writing
 
-[Professional website](https://johndgomez.com/en/) · [Technical projects](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/)
+[Professional website](https://johndgomez.com/en/) · [Technical projects](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/) · [Résumé (PDF)](https://assets.johndgomez.com/current/document/resume/english/pdf/resume.pdf)
 
 ## Professional conversations
 
