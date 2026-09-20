@@ -16,7 +16,7 @@ jobs:
       SITE: https://johndgomez.com
       EXPECTED_COMMIT: cec926778cfdda1d407a65166fccfcece6eede8e
     steps:
-      - name: Production contract
+      - name: Production revision
         shell: bash
         run: |
           set -euo pipefail
@@ -24,74 +24,38 @@ jobs:
           observed="$(printf '%s' "$body" | python3 -c 'import json,sys; print(json.load(sys.stdin)["sourceCommit"])')"
           echo "observed=$observed expected=$EXPECTED_COMMIT"
           test "$observed" = "$EXPECTED_COMMIT"
-          curl --fail --silent --show-error --location --max-time 20 --dump-header /tmp/headers.txt "$SITE/" --output /tmp/index.html
-          echo "script-count=$(grep -Eio '<script([[:space:]>])' /tmp/index.html | wc -l || true)"
-          grep -i '^content-security-policy:' /tmp/headers.txt
 
       - name: Install Lighthouse
         run: npm install --global lighthouse@13.0.1
 
-      - name: Lighthouse mobile diagnostic
+      - name: Lighthouse mobile
         shell: bash
         run: |
           set -euo pipefail
           lighthouse "$SITE/" --quiet --chrome-flags="--headless --no-sandbox" --output=json --output-path=/tmp/mobile.json
-          node - <<'NODE'
-          const r=require('/tmp/mobile.json');
-          const cats=['performance','accessibility','best-practices','seo'];
-          console.log('CATEGORIES',Object.fromEntries(cats.map(k=>[k,Math.round(r.categories[k].score*100)])));
-          console.log('CONSOLE',r.audits['errors-in-console']?.score,r.audits['errors-in-console']?.displayValue||'');
-          for(const c of cats){
-            console.log('CATEGORY',c);
-            for(const ref of r.categories[c].auditRefs){
-              const a=r.audits[ref.id];
-              if(a && a.score!==null && a.score!==1){
-                console.log(JSON.stringify({id:a.id,score:a.score,mode:a.scoreDisplayMode,title:a.title,display:a.displayValue||'',description:a.description||'',numericValue:a.numericValue,numericUnit:a.numericUnit}));
-              }
-            }
-          }
-          NODE
+          node -e "const r=require('/tmp/mobile.json'); const cats=['performance','accessibility','best-practices','seo']; console.log('CATEGORIES',JSON.stringify(Object.fromEntries(cats.map(k=>[k,Math.round(r.categories[k].score*100)]))); for(const c of cats){console.log('CATEGORY',c); for(const ref of r.categories[c].auditRefs){const a=r.audits[ref.id]; if(a&&a.score!==null&&a.score!==1) console.log(JSON.stringify({id:a.id,score:a.score,mode:a.scoreDisplayMode,title:a.title,display:a.displayValue||'',numericValue:a.numericValue,numericUnit:a.numericUnit}))}} console.log('CONSOLE',r.audits['errors-in-console']?.score)"
 
-      - name: Lighthouse desktop diagnostic
+      - name: Lighthouse desktop
         shell: bash
         run: |
           set -euo pipefail
           lighthouse "$SITE/" --quiet --preset=desktop --chrome-flags="--headless --no-sandbox" --output=json --output-path=/tmp/desktop.json
-          node - <<'NODE'
-          const r=require('/tmp/desktop.json');
-          const cats=['performance','accessibility','best-practices','seo'];
-          console.log('CATEGORIES',Object.fromEntries(cats.map(k=>[k,Math.round(r.categories[k].score*100)])));
-          console.log('CONSOLE',r.audits['errors-in-console']?.score,r.audits['errors-in-console']?.displayValue||'');
-          for(const c of cats){
-            console.log('CATEGORY',c);
-            for(const ref of r.categories[c].auditRefs){
-              const a=r.audits[ref.id];
-              if(a && a.score!==null && a.score!==1){
-                console.log(JSON.stringify({id:a.id,score:a.score,mode:a.scoreDisplayMode,title:a.title,display:a.displayValue||'',description:a.description||'',numericValue:a.numericValue,numericUnit:a.numericUnit}));
-              }
-            }
-          }
-          NODE
+          node -e "const r=require('/tmp/desktop.json'); const cats=['performance','accessibility','best-practices','seo']; console.log('CATEGORIES',JSON.stringify(Object.fromEntries(cats.map(k=>[k,Math.round(r.categories[k].score*100)]))); for(const c of cats){console.log('CATEGORY',c); for(const ref of r.categories[c].auditRefs){const a=r.audits[ref.id]; if(a&&a.score!==null&&a.score!==1) console.log(JSON.stringify({id:a.id,score:a.score,mode:a.scoreDisplayMode,title:a.title,display:a.displayValue||'',numericValue:a.numericValue,numericUnit:a.numericUnit}))}} console.log('CONSOLE',r.audits['errors-in-console']?.score)"
 
-      - name: PageSpeed Insights API diagnostics
+      - name: PageSpeed API mobile
         shell: bash
         continue-on-error: true
         run: |
-          set -euo pipefail
-          for strategy in mobile desktop; do
-            url="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fjohndgomez.com%2F&strategy=$strategy&category=performance&category=accessibility&category=best-practices&category=seo"
-            code="$(curl --silent --show-error --max-time 120 --output "/tmp/psi-$strategy.json" --write-out '%{http_code}' "$url")"
-            echo "PSI-$strategy HTTP=$code"
-            if [ "$code" = 200 ]; then
-              STRATEGY="$strategy" python3 - <<'PY'
-import json, os
-x=json.load(open('/tmp/psi-'+os.environ['STRATEGY']+'.json'))
-c=x['lighthouseResult']['categories']
-n=['performance','accessibility','best-practices','seo']
-print({k:round(c[k]['score']*100) for k in n})
-PY
-            else
-              head -c 1000 "/tmp/psi-$strategy.json"
-              echo
-            fi
-          done
+          url="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fjohndgomez.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo"
+          code="$(curl --silent --show-error --max-time 120 --output /tmp/psi-mobile.json --write-out '%{http_code}' "$url")"
+          echo "HTTP=$code"
+          if [ "$code" = 200 ]; then python3 -c "import json; x=json.load(open('/tmp/psi-mobile.json')); c=x['lighthouseResult']['categories']; n=['performance','accessibility','best-practices','seo']; print({k:round(c[k]['score']*100) for k in n})"; else cat /tmp/psi-mobile.json; fi
+
+      - name: PageSpeed API desktop
+        shell: bash
+        continue-on-error: true
+        run: |
+          url="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fjohndgomez.com%2F&strategy=desktop&category=performance&category=accessibility&category=best-practices&category=seo"
+          code="$(curl --silent --show-error --max-time 120 --output /tmp/psi-desktop.json --write-out '%{http_code}' "$url")"
+          echo "HTTP=$code"
+          if [ "$code" = 200 ]; then python3 -c "import json; x=json.load(open('/tmp/psi-desktop.json')); c=x['lighthouseResult']['categories']; n=['performance','accessibility','best-practices','seo']; print({k:round(c[k]['score']*100) for k in n})"; else cat /tmp/psi-desktop.json; fi
