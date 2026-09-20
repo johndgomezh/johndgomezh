@@ -1,4 +1,4 @@
-name: Lighthouse audit details
+name: Robots diagnostic
 
 on:
   push:
@@ -9,15 +9,19 @@ permissions:
   contents: read
 
 jobs:
-  audit:
+  robots:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     steps:
-      - name: Install Lighthouse
-        run: npm install --global lighthouse@13.0.1
-      - name: Audit production
+      - name: Inspect robots
         shell: bash
         run: |
           set -euo pipefail
-          lighthouse "https://johndgomez.com/" --quiet --chrome-flags="--headless --no-sandbox" --output=json --output-path=/tmp/lhr.json
-          node -e "const r=require('/tmp/lhr.json'); for(const id of ['errors-in-console','inspector-issues','robots-txt','render-blocking-insight','network-dependency-tree-insight','first-contentful-paint','largest-contentful-paint']){const a=r.audits[id]; console.log('BEGIN',id); console.log(JSON.stringify(a,null,2)); console.log('END',id)}"
+          echo "HTTPS robots"
+          curl --silent --show-error --max-time 20 --dump-header - https://johndgomez.com/robots.txt
+          echo
+          echo "HTTP robots"
+          curl --silent --show-error --max-time 20 --dump-header - http://johndgomez.com/robots.txt
+          echo
+          echo "Googlebot robots"
+          curl --silent --show-error --max-time 20 --user-agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" --dump-header - https://johndgomez.com/robots.txt
