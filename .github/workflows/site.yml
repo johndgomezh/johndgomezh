@@ -33,14 +33,14 @@ jobs:
         run: |
           set -euo pipefail
           lighthouse "$SITE/" --quiet --chrome-flags="--headless --no-sandbox" --output=json --output-path=/tmp/mobile.json
-          node -e "const r=require('/tmp/mobile.json'); const cats=['performance','accessibility','best-practices','seo']; console.log('CATEGORIES',JSON.stringify(Object.fromEntries(cats.map(k=>[k,Math.round(r.categories[k].score*100)]))); for(const c of cats){console.log('CATEGORY',c); for(const ref of r.categories[c].auditRefs){const a=r.audits[ref.id]; if(a&&a.score!==null&&a.score!==1) console.log(JSON.stringify({id:a.id,score:a.score,mode:a.scoreDisplayMode,title:a.title,display:a.displayValue||'',numericValue:a.numericValue,numericUnit:a.numericUnit}))}} console.log('CONSOLE',r.audits['errors-in-console']?.score)"
+          node -e "const r=require('/tmp/mobile.json'); const cats=['performance','accessibility','best-practices','seo']; for(const c of cats){console.log('SCORE',c,Math.round(r.categories[c].score*100)); for(const ref of r.categories[c].auditRefs){const a=r.audits[ref.id]; if(a&&a.score!==null&&a.score!==1) console.log('AUDIT',JSON.stringify({category:c,id:a.id,score:a.score,mode:a.scoreDisplayMode,title:a.title,display:a.displayValue||'',numericValue:a.numericValue,numericUnit:a.numericUnit}))}} console.log('CONSOLE',r.audits['errors-in-console']?.score)"
 
       - name: Lighthouse desktop
         shell: bash
         run: |
           set -euo pipefail
           lighthouse "$SITE/" --quiet --preset=desktop --chrome-flags="--headless --no-sandbox" --output=json --output-path=/tmp/desktop.json
-          node -e "const r=require('/tmp/desktop.json'); const cats=['performance','accessibility','best-practices','seo']; console.log('CATEGORIES',JSON.stringify(Object.fromEntries(cats.map(k=>[k,Math.round(r.categories[k].score*100)]))); for(const c of cats){console.log('CATEGORY',c); for(const ref of r.categories[c].auditRefs){const a=r.audits[ref.id]; if(a&&a.score!==null&&a.score!==1) console.log(JSON.stringify({id:a.id,score:a.score,mode:a.scoreDisplayMode,title:a.title,display:a.displayValue||'',numericValue:a.numericValue,numericUnit:a.numericUnit}))}} console.log('CONSOLE',r.audits['errors-in-console']?.score)"
+          node -e "const r=require('/tmp/desktop.json'); const cats=['performance','accessibility','best-practices','seo']; for(const c of cats){console.log('SCORE',c,Math.round(r.categories[c].score*100)); for(const ref of r.categories[c].auditRefs){const a=r.audits[ref.id]; if(a&&a.score!==null&&a.score!==1) console.log('AUDIT',JSON.stringify({category:c,id:a.id,score:a.score,mode:a.scoreDisplayMode,title:a.title,display:a.displayValue||'',numericValue:a.numericValue,numericUnit:a.numericUnit}))}} console.log('CONSOLE',r.audits['errors-in-console']?.score)"
 
       - name: PageSpeed API mobile
         shell: bash
