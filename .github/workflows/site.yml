@@ -1,0 +1,68 @@
+name: Site production acceptance
+
+on:
+  push:
+    branches:
+      - verify/site-production
+
+permissions:
+  contents: read
+
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SITE: https://johndgomez.com
+      EXPECTED_COMMIT: cec926778cfdda1d407a65166fccfcece6eede8e
+    steps:
+      - name: Production revision and source contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          body="$(curl --fail --silent --show-error --location --max-time 20 "$SITE/version")"
+          observed="$(printf '%s' "$body" | python3 -c 'import json,sys; print(json.load(sys.stdin)["sourceCommit"])')"
+          echo "observed=$observed"
+          echo "expected=$EXPECTED_COMMIT"
+          test "$observed" = "$EXPECTED_COMMIT"
+          curl --fail --silent --show-error --location --max-time 20 --dump-header /tmp/headers.txt "$SITE/" --output /tmp/index.html
+          python3 -c "from pathlib import Path; import re; h=Path('/tmp/index.html').read_text(); x=Path('/tmp/headers.txt').read_text(errors='replace'); c=next((l for l in x.splitlines() if l.lower().startswith('content-security-policy:')), ''); f=[]; f+=['script present'] if re.search(r'<script\\b',h,re.I) else []; f+=['analytics present'] if 'cloudflareinsights' in h.lower() else []; f+=['wordmark absent'] if 'John D. Gómez' not in h or '<span class=\\\"proof-point\\\"' not in h else []; f += [q for q in ('script-src','connect-src','cloudflareinsights','unsafe-inline','unsafe-eval') if q in c.lower()]; print('scripts',len(re.findall(r'<script\\b',h,re.I))); print(c); print('bytes',len(h.encode())); raise SystemExit(' | '.join(f) if f else 0)"
+
+      - name: Critical assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          for url in             "https://assets.johndgomez.com/current/identity/markicon/browser/0096/png/favicon.png"             "https://assets.johndgomez.com/current/identity/markicon/browser/0096/vector/favicon.svg"             "https://assets.johndgomez.com/current/outreach/website/spanish/landscape/png/card.png"             "https://assets.johndgomez.com/current/document/resume/spanish/pdf/resume.pdf"             "https://assets.johndgomez.com/current/contacts/professional/vcard/contact.vcf"; do
+            status="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' --max-time 20 "$url")"
+            echo "$status $url"
+            test "$status" = 200
+          done
+
+      - name: Install Lighthouse
+        run: npm install --global lighthouse@13.0.1
+
+      - name: Lighthouse mobile
+        shell: bash
+        run: |
+          lighthouse "$SITE/" --quiet --chrome-flags="--headless --no-sandbox" --output=json --output-path=/tmp/mobile.json
+          node -e "const r=require('/tmp/mobile.json'); const n=['performance','accessibility','best-practices','seo']; const s=Object.fromEntries(n.map(k=>[k,Math.round(r.categories[k].score*100)])); console.log(JSON.stringify(s)); console.log('errors-in-console',r.audits['errors-in-console']?.score); if(Object.values(s).some(v=>v!==100)||r.audits['errors-in-console']?.score!==1) process.exit(1)"
+
+      - name: Lighthouse desktop
+        shell: bash
+        run: |
+          lighthouse "$SITE/" --quiet --preset=desktop --chrome-flags="--headless --no-sandbox" --output=json --output-path=/tmp/desktop.json
+          node -e "const r=require('/tmp/desktop.json'); const n=['performance','accessibility','best-practices','seo']; const s=Object.fromEntries(n.map(k=>[k,Math.round(r.categories[k].score*100)])); console.log(JSON.stringify(s)); console.log('errors-in-console',r.audits['errors-in-console']?.score); if(Object.values(s).some(v=>v!==100)||r.audits['errors-in-console']?.score!==1) process.exit(1)"
+
+      - name: PageSpeed mobile
+        shell: bash
+        run: |
+          url="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fjohndgomez.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo"
+          curl --fail --silent --show-error --max-time 120 "$url" > /tmp/psi.json
+          python3 -c "import json; x=json.load(open('/tmp/psi.json')); c=x['lighthouseResult']['categories']; n=['performance','accessibility','best-practices','seo']; s={k:round(c[k]['score']*100) for k in n}; print(s); assert all(v==100 for v in s.values())"
+
+      - name: PageSpeed desktop
+        shell: bash
+        run: |
+          url="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fjohndgomez.com%2F&strategy=desktop&category=performance&category=accessibility&category=best-practices&category=seo"
+          curl --fail --silent --show-error --max-time 120 "$url" > /tmp/psi.json
+          python3 -c "import json; x=json.load(open('/tmp/psi.json')); c=x['lighthouseResult']['categories']; n=['performance','accessibility','best-practices','seo']; s={k:round(c[k]['score']*100) for k in n}; print(s); assert all(v==100 for v in s.values())"
