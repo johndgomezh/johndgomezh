@@ -20,7 +20,9 @@ I have worked in software since 2017. Earlier experience in accounting and opera
 
 ## Background and writing
 
-[Professional website](https://johndgomez.com/en/) · [Technical projects](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/) · [Résumé (PDF)](https://assets.johndgomez.com/current/document/resume/english/pdf/resume.pdf)
+[Professional website](https://johndgomez.com/en/) · [Publications](https://blog.johndgomez.com/en/) · [Follow the blog](https://feeds.johndgomez.com/languages/en.xml) · [Technical projects](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/) · [Résumé (PDF)](https://assets.johndgomez.com/current/document/resume/english/pdf/resume.pdf)
+
+Based in Bogotá, Colombia. My working language is Spanish; my English is currently elementary.
 
 ## Professional conversations
 
