@@ -20,7 +20,9 @@ Mi trayectoria en software comenzó en 2017. La experiencia anterior en contabil
 
 ## Trayectoria y escritura
 
-[Sitio profesional](https://johndgomez.com/) · [Proyectos técnicos](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/) · [Currículum (PDF)](https://assets.johndgomez.com/current/document/resume/spanish/pdf/resume.pdf)
+[Sitio profesional](https://johndgomez.com/) · [Publicaciones](https://blog.johndgomez.com/) · [Seguir el blog](https://feeds.johndgomez.com/languages/es-CO.xml) · [Proyectos técnicos](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/) · [Currículum (PDF)](https://assets.johndgomez.com/current/document/resume/spanish/pdf/resume.pdf)
+
+Bogotá, Colombia. Mi idioma de trabajo es español; mi inglés es actualmente elemental.
 
 ## Conversaciones profesionales
 
