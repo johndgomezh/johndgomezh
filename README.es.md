@@ -1,5 +1,5 @@
 <picture>
-  <img alt="John D. Gómez — Tech Lead, diseño y evolución de software empresarial" src="https://assets.johndgomez.com/archive/5.0.0/profiles/github/personal/png/banner.png" width="1280" height="480">
+  <img alt="John D. Gómez — Tech Lead, diseño y evolución de software empresarial" src="https://assets.johndgomez.com/archive/5.0.0/profiles/github/personal/png/banner.png" width="1280">
 </picture>
 
 [English](README.md)
