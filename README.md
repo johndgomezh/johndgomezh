@@ -1,5 +1,5 @@
 <picture>
-  <img alt="John D. Gómez — Tech Lead, enterprise software design and evolution" src="https://assets.johndgomez.com/archive/5.0.0/profiles/github/personal/png/banner.png" width="1280">
+  <img alt="John D. Gómez — Tech Lead, enterprise software design and evolution" src="https://assets.johndgomez.com/archive/6.0.0/profiles/github/personal/png/banner.png" width="1280">
 </picture>
 
 [Español](README.es.md)
@@ -20,12 +20,12 @@ I have worked in software since 2017. Earlier experience in accounting and opera
 
 ## Background and writing
 
-[Professional website](https://johndgomez.com/en/) · [Publications](https://blog.johndgomez.com/en/) · [Follow the blog](https://feeds.johndgomez.com/languages/en.xml) · [Technical projects](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/) · [Résumé (PDF)](https://assets.johndgomez.com/archive/5.0.0/document/resume/english/pdf/resume.pdf)
+[Professional website](https://johndgomez.com/en/) · [Publications](https://blog.johndgomez.com/en/) · [Follow the blog](https://feeds.johndgomez.com/languages/en.xml) · [Technical projects](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/) · [Résumé (PDF)](https://assets.johndgomez.com/archive/6.0.0/document/resume/english/pdf/resume.pdf)
 
 Based in Bogotá, Colombia. My working language is Spanish; my English is currently elementary.
 
 ## Professional conversations
 
-[Career opportunities](mailto:career@johndgomez.com) · [Professional inquiries](mailto:contact@johndgomez.com)
+[Career opportunities](mailto:career@johndgomez.com) · [Professional inquiries](mailto:contact@johndgomez.com) · [WhatsApp](https://wa.me/573125916081)
 
 Tell me about the team, the responsibility or the technical challenge you have in mind.
