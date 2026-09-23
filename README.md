@@ -1,5 +1,5 @@
 <picture>
-  <img alt="John D. Gómez — Tech Lead, enterprise software design and evolution" src="https://assets.johndgomez.com/archive/6.0.0/profiles/github/personal/png/banner.png" width="1280">
+  <img alt="John D. Gómez — Tech Lead, enterprise software design and evolution" src="https://assets.johndgomez.com/archive/6.1.0/profiles/github/personal/png/banner.png" width="1280">
 </picture>
 
 [Español](README.es.md)
@@ -29,3 +29,5 @@ Based in Bogotá, Colombia. My working language is Spanish; my English is curren
 [Career opportunities](mailto:career@johndgomez.com) · [Professional inquiries](mailto:contact@johndgomez.com) · [WhatsApp](https://wa.me/573125916081)
 
 Tell me about the team, the responsibility or the technical challenge you have in mind.
+
+WhatsApp or Telegram messages: +57 312 591 6081. Please message me first with your name, company and reason for contacting me. Calls are arranged beforehand.

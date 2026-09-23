@@ -1,5 +1,5 @@
 <picture>
-  <img alt="John D. Gómez — Tech Lead, diseño y evolución de software empresarial" src="https://assets.johndgomez.com/archive/6.0.0/profiles/github/personal/png/banner.png" width="1280">
+  <img alt="John D. Gómez — Tech Lead, diseño y evolución de software empresarial" src="https://assets.johndgomez.com/archive/6.1.0/profiles/github/personal/png/banner.png" width="1280">
 </picture>
 
 [English](README.md)
@@ -29,3 +29,5 @@ Bogotá, Colombia. Mi idioma de trabajo es español; mi inglés es actualmente e
 [Oportunidades laborales](mailto:career@johndgomez.com) · [Consultas profesionales](mailto:contact@johndgomez.com) · [WhatsApp](https://wa.me/573125916081)
 
 Cuéntame sobre el equipo, la responsabilidad o el reto técnico que tienes en mente.
+
+Mensajes por WhatsApp o Telegram: +57 312 591 6081. Prefiero un mensaje inicial con tu nombre, empresa y motivo de contacto. Las llamadas se acuerdan previamente.
