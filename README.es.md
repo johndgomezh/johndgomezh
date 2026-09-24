@@ -1,5 +1,5 @@
 <picture>
-  <img alt="John D. Gómez — Tech Lead, diseño y evolución de software empresarial" src="https://assets.johndgomez.com/archive/6.1.0/profiles/github/personal/png/banner.png" width="1280">
+  <img alt="John D. Gómez — Tech Lead, diseño y evolución de software empresarial" src="https://assets.johndgomez.com/archive/6.6.0/profiles/github/personal/spanish/png/banner.png" width="1280">
 </picture>
 
 [English](README.md)
@@ -20,7 +20,7 @@ Mi trayectoria en software comenzó en 2017. La experiencia anterior en contabil
 
 ## Trayectoria y escritura
 
-[Sitio profesional](https://johndgomez.com/) · [Publicaciones](https://blog.johndgomez.com/) · [Seguir el blog](https://feeds.johndgomez.com/languages/es-CO.xml) · [Proyectos técnicos](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/) · [Currículum (PDF)](https://assets.johndgomez.com/archive/6.0.0/document/resume/spanish/pdf/resume.pdf)
+[Sitio profesional](https://johndgomez.com/) · [Publicaciones](https://blog.johndgomez.com/) · [Seguir el blog](https://feeds.johndgomez.com/languages/es-CO.xml) · [Proyectos técnicos](https://github.com/johndgomez) · [LinkedIn](https://www.linkedin.com/in/johndgomezh/) · [Currículum (PDF)](https://assets.johndgomez.com/archive/6.6.0/document/resume/spanish/pdf/resume.pdf)
 
 Bogotá, Colombia. Mi idioma de trabajo es español; mi inglés es actualmente elemental.
 
